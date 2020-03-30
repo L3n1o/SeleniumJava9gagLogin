@@ -1,0 +1,235 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 13365464400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Login.readBrowser()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Login into account with invalid user data",
+        "description": "",
+        "id": "login-into-9gag-account;login-into-account-with-invalid-user-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1828561900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User navigates to 9gag login website",
+            "match": {
+              "location": "Login.user_navigates_to_website()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2174360000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User closes the pop up message",
+            "match": {
+              "location": "Login.user_closes_the_pop_up_message()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 169143300,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User enters a username: ",
+            "match": {
+              "arguments": [
+                {
+                  "val": " ",
+                  "offset": 23
+                }
+              ],
+              "location": "Login.user_enters_a_username(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 242869800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User enters a password: Klenio12@",
+            "match": {
+              "arguments": [
+                {
+                  "val": " Klenio12@",
+                  "offset": 23
+                }
+              ],
+              "location": "Login.user_enters_a_password(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1618921000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User clicks on the login button",
+            "match": {
+              "location": "Login.user_clicks_on_the_login_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 178888100,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User should be taken to unsuccessful login page",
+            "match": {
+              "location": "Login.user_should_be_taken_to_unsuccessful_login_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 770200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Login.readBrowser()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "Login into account with valid user data",
+        "description": "",
+        "id": "login-into-9gag-account;login-into-account-with-valid-user-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1089416200,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User navigates to 9gag login website",
+            "match": {
+              "location": "Login.user_navigates_to_website()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2059168000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User closes the pop up message",
+            "match": {
+              "location": "Login.user_closes_the_pop_up_message()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 174960500,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User enters a username: wasylion@gmail.com",
+            "match": {
+              "arguments": [
+                {
+                  "val": " wasylion@gmail.com",
+                  "offset": 23
+                }
+              ],
+              "location": "Login.user_enters_a_username(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 118925000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User enters a password: Klenio12@",
+            "match": {
+              "arguments": [
+                {
+                  "val": " Klenio12@",
+                  "offset": 23
+                }
+              ],
+              "location": "Login.user_enters_a_password(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1646340800,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User clicks on the login button",
+            "match": {
+              "location": "Login.user_clicks_on_the_login_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 135394900,
+              "error_message": "java.lang.AssertionError: expected [false] but found [true]\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:513)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:135)\r\n\tat org.testng.Assert.assertEquals(Assert.java:116)\r\n\tat org.testng.Assert.assertEquals(Assert.java:305)\r\n\tat org.testng.Assert.assertEquals(Assert.java:315)\r\n\tat Login9gag.StepsFiles.Login.user_should_be_taken_to_successful_login_page(Login.java:167)\r\n\tat ✽.Then User should be taken to successful login page(Login.feature:26)\r\n",
+              "status": "failed"
+            },
+            "line": 26,
+            "name": "User should be taken to successful login page",
+            "match": {
+              "location": "Login.user_should_be_taken_to_successful_login_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Login into 9gag account",
+    "description": " Existing 9gag user should be able to login into an account by using correct credentails",
+    "id": "login-into-9gag-account",
+    "keyword": "Feature",
+    "uri": "Login.feature"
+  }
+]
