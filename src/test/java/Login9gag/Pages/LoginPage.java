@@ -1,15 +1,5 @@
 package Login9gag.Pages;
 
-import Login9gag.DriverSetUp.DriverSetUp;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -18,77 +8,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
-	JSONParser jsonParser = new JSONParser();
-	BufferedReader reader;
-	DriverSetUp driverSetUp = new DriverSetUp();
-	//String username, password;
+	WebDriver driver;
 	
-	
-	public WebDriver readBrowser(WebDriver driver)
-	{	
-        try
-        {
-        	Object obj = jsonParser.parse(new FileReader("src\\test\\java\\Login9gag\\Resources\\browser.json"));
-        	JSONObject jsonObject = (JSONObject) obj;
-        	driver = driverSetUp.driverSetUp(driver, (String) jsonObject.get("browser"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return driver;
+	public LoginPage(WebDriver driver)
+	{
+		this.driver = driver;
 	}
-       /*//Text file reader
-		try {
-			reader = new BufferedReader(new FileReader("\src\\test\\java\\CucumberTest\\Resources\\browser.txt"));
-			driver = driverSetUp(reader.readLine());
-		}
-		catch(IOException ex)
-		{
-			ex.printStackTrace();
-		}
-	}*/
 	
-	/*
-	public void readUserData()
-	{	
-		driver = driverSetUp("");
-        try
-        {
-        	Object obj = jsonParser.parse(new FileReader("src\\test\\java\\Login9gag\\Resources\\loginData.json"));
-        	JSONObject jsonObject = (JSONObject) obj;
- 
-			username = (String) jsonObject.get("username");
-			password = (String) jsonObject.get("password"); 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }}
-    //Text file reader
-		try {
-			reader = new BufferedReader(new FileReader("src\\test\\java\\Login9gag\\Resources\\loginData.txt"));
-			username = reader.readLine();
-			password = reader.readLine();
-			System.out.println(username + " " + password);
-		}
-		catch(IOException ex)
-		{
-			ex.printStackTrace();
-		}
-	}*/
-	
-	
-	public void getPage(WebDriver driver)
+	public void getPage()
 	{
 		driver.get("https://9gag.com/login");
 	}
 	
-	public void closePopUp(WebDriver driver)
+	public void closePopUp()
 	{
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -99,7 +31,7 @@ public class LoginPage {
 		}
 	}
 	
-	public void putUsername(WebDriver driver, String username)
+	public void putUsername(String username)
 	{
 		try {
 			driver.findElement(By.id("login-email-name")).clear();
@@ -110,7 +42,7 @@ public class LoginPage {
 		}
 	}
 	
-	public void putPassword(WebDriver driver, String password)
+	public void putPassword(String password)
 	{
 		try {
 			driver.findElement(By.id("login-email-password")).clear();
@@ -121,7 +53,7 @@ public class LoginPage {
 		}
 	}
 	
-	public void ClickLogin(WebDriver driver)
+	public void ClickLogin()
 	{
 		try {
 			WebElement popUp = driver.findElement(By.id("signup"));
@@ -135,7 +67,7 @@ public class LoginPage {
 		}
 	}
 	
-	public boolean successfulPage(WebDriver driver)
+	public boolean successfulPage()
 	{
 		try {
 			if(driver.findElement(By.id("jsid-upload-btn")).isDisplayed())
@@ -147,7 +79,7 @@ public class LoginPage {
 		return false;		
 	}	
 	
-	public boolean unsuccessfulPage(WebDriver driver)
+	public boolean unsuccessfulPage()
 	{
 		try {
 			if(driver.findElement(By.xpath("//*[@id=\"login-email\"]/div[2]/p")).isDisplayed())
